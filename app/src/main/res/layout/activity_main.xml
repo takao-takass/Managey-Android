@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_back_image"
+    tools:context="com.takassoftware.managey.MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main_title_image"
+                android:layout_width="275dp"
+                android:layout_height="109dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                app:srcCompat="@drawable/managey_title_noneback" />
+
+            <!--<TextView
+                android:id="@+id/main_title_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="資産管理を始めよう"
+                android:textColor="@color/colorBlack"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+             -->
+            <TextView
+                android:id="@+id/main_title_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/main_mailaddress"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                android:ems="10"
+                android:hint="メールアドレス"
+                android:inputType="textPersonName"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/main_password"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="パスワード"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/main_login_button"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/radius_primary"
+                android:onClick="onClick"
+                android:text="ログイン"
+                android:textColor="@color/colorWhite" />
+
+            <Button
+                android:id="@+id/main_entry_button"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/radius_primary_reverse"
+                android:onClick="onClick"
+                android:text="新規登録"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>

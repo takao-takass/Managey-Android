@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- タイトルバー有りテーマ -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorOrange</item>
+        <item name="colorPrimaryDark">@color/colorDarkOrange</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor">@color/colorDarkOrange</item>
+    </style>
+
+    <!-- タイトルバー有りテーマ -->
+    <style name="AppTheme_OnTitle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorOrange</item>
+        <item name="colorPrimaryDark">@color/colorDarkOrange</item>
+        <item name="android:navigationBarColor">@color/colorDarkOrange</item>
+    </style>
+
+    <!-- タイトルバー無しテーマ -->
+    <style name="AppTheme_NoneTitle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimaryDark">@color/colorDarkOrange</item>
+        <item name="android:navigationBarColor">@color/colorDarkOrange</item>
+    </style>
+
+
+</resources>

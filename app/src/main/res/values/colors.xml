@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default color set -->
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- Managey color set -->
+    <color name="colorDarkOrange">#d17400</color>
+    <color name="colorOrange">#fb8c00</color>
+    <color name="colorBlack">#404040</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorPrimary">#007BFF</color>
+    <color name="colorSecondary">#6C757D</color>
+    <color name="colorSuccess">#28A745</color>
+    <color name="colorDanger">#DC3545</color>
+    <color name="colorWarning">#FFC107</color>
+    <color name="colorInfo">#17A2B8</color>
+    <color name="colorLight">#F8F9FA</color>
+
+    <color name="clearButtonPressed">#33000000</color>
+
+</resources>

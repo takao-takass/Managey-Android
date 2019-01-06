@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_back_image"
+    tools:context="com.takassoftware.managey.EntryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/entry_guid_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Manageyの利用を開始するために"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/entry_guid_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="情報を登録してください"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/entry_guid_3"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:text="あなたの情報"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/editText"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:ems="10"
+                        android:hint="名前（ニックネーム）"
+                        android:inputType="textPersonName"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/entry_guid_4"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:text="Manageyを利用するための情報"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/editText3"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:ems="10"
+                        android:hint="メールアドレス"
+                        android:inputType="textEmailAddress" />
+
+                    <EditText
+                        android:id="@+id/editText5"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:ems="10"
+                        android:hint="パスワード"
+                        android:inputType="textPassword" />
+
+                    <TextView
+                        android:id="@+id/entry_guid_5"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:text="確認のためにパスワードをもう一度"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/entry_guid_6"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="入力してください"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/editText6"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:ems="10"
+                        android:hint="パスワード（再入力）"
+                        android:inputType="textPassword" />
+
+                    <Button
+                        android:id="@+id/entry_button"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="50dp"
+                        android:background="@drawable/radius_primary"
+                        android:text="登録"
+                        android:textColor="@color/colorWhite" />
+                </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

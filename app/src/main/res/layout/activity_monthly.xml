@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MonthlyActivity">
+
+    <!-- Activity全体のレイアウト -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- 前後月ボタンのレイアウト -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- 前月ボタン -->
+            <Button
+                android:id="@+id/monthly_prev_month_button"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg_clear"
+                android:text="＜" />
+
+            <!-- 当月情報のレイアウト -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- 当月情報 -->
+                <TextView
+                    android:id="@+id/monthly_month_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="2018年10月"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <!-- 月末金額 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="月末" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="￥999,999,999" />
+
+                </LinearLayout>
+
+                <!-- 当月下限金額 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="下限" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="￥999,999,999" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/monthly_next_month_button"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg_clear"
+                android:text="＞" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
