@@ -21,5 +21,14 @@
         <item name="android:navigationBarColor">@color/colorDarkOrange</item>
     </style>
 
+    <style name="AppTheme_OnTitle.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme_OnTitle.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme_OnTitle.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 
 </resources>
