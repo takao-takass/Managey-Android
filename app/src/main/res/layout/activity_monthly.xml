@@ -6,98 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".MonthlyActivity">
 
-    <!-- Activity全体のレイアウト -->
+    <!-- 月間情報Activityのレイアウト -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- 前後月ボタンのレイアウト -->
+        <!-- 月・月前後ボタンの表示 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:background="@color/colorOrange">
 
-            <!-- 前月ボタン -->
             <Button
                 android:id="@+id/monthly_prev_month_button"
-                android:layout_width="10dp"
+                android:layout_width="5dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg_clear"
+                android:textColor="@color/colorWhite"
+                android:layout_gravity="center"
                 android:text="＜" />
 
-            <!-- 当月情報のレイアウト -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/monthly_month_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
-
-                <!-- 当月情報 -->
-                <TextView
-                    android:id="@+id/monthly_month_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="2018年10月"
-                    android:textSize="26sp"
-                    android:textStyle="bold" />
-
-                <!-- 月末金額 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:text="月末" />
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="left"
-                        android:layout_weight="1"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:text="￥999,999,999" />
-
-                </LinearLayout>
-
-                <!-- 当月下限金額 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:text="下限" />
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="left"
-                        android:layout_weight="1"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:text="￥999,999,999" />
-                </LinearLayout>
-            </LinearLayout>
+                android:gravity="center"
+                android:text="2018年10月"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:layout_gravity="center" />
 
             <Button
                 android:id="@+id/monthly_next_month_button"
@@ -105,15 +47,135 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg_clear"
+                android:textColor="@color/colorWhite"
+                android:layout_gravity="center"
                 android:text="＞" />
 
         </LinearLayout>
 
+        <!-- 月末金額の表示 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/monthly_total_label"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="月末金額"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/monthly_total_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="￥999,999,999"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+        <!-- 当月残額の表示 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/monthly_remaining_label"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="当月残額"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/monthly_remaining_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="￥999,999,999"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+        <!-- 貯金目標額の表示 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/monthly_total_savings_label"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="貯金目標額"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/monthly_total_savings_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="￥999,999,999"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+        <!-- 当月貯金額の表示 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/monthly_savings_label"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="当月貯金額"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/monthly_saving_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="￥999,999,999"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+
+        <!-- 月間情報リスト -->
         <android.support.v7.widget.RecyclerView
             android:id="@+id/monthly_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-        </android.support.v7.widget.RecyclerView>
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
 
     </LinearLayout>
