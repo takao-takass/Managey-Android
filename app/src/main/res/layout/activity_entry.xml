@@ -12,26 +12,33 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/entry_guid_1"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="Manageyの利用を開始するために"
-            android:textColor="@color/colorBlack"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:background="@color/colorOrange">
 
-        <TextView
-            android:id="@+id/entry_guid_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="情報を登録してください"
-            android:textColor="@color/colorBlack"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/entry_guid_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Manageyの利用を開始するために"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/entry_guid_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="情報を登録してください"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"

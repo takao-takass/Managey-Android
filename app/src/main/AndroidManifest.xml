@@ -19,8 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EntryActivity" />
-        <activity android:name=".MonthlyActivity" />
+        <activity
+            android:name=".EntryActivity"
+            android:theme="@style/AppTheme_NoneTitle" />
+        <activity android:name=".MonthlyActivity"
+            android:theme="@style/AppTheme_NoneTitle"/>
 
     </application>
 
