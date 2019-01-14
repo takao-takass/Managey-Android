@@ -6,7 +6,7 @@
     android:layout_height="75dp"
     android:background="@color/colorWhite"
     android:id="@+id/monthly_list_item"
-    android:onClick="onClick">
+    android:onClick="onClickMonthlyListItem">
 
     <LinearLayout
         android:layout_width="match_parent"

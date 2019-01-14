@@ -35,7 +35,7 @@
             <TextView
                 android:id="@+id/monthly_month_text"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:gravity="center"
@@ -57,139 +57,38 @@
 
         </LinearLayout>
 
-        <!-- 月末金額の表示 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                android:id="@+id/monthly_total_label"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="月末金額"
-                android:textSize="8pt"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textColor="@color/colorSecondary"/>
-
-            <TextView
-                android:id="@+id/monthly_total_money"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="25dp"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:text="999,999,999,999円"
-                android:textColor="@color/colorSecondary"
-                android:textSize="8pt"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
         <!-- 当月残額の表示 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:orientation="horizontal">
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:onClick="onClickMonthlyRemaining">
 
             <TextView
                 android:id="@+id/monthly_remaining_label"
-                android:layout_width="80dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:gravity="start"
                 android:text="当月残額"
-                android:textSize="8pt"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textColor="@color/colorSecondary"/>
+                android:textColor="@color/colorSecondary"
+                android:textSize="10pt"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/monthly_remaining_money"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:gravity="end"
                 android:text="999,999,999,999円"
-                android:textSize="8pt"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:gravity="right"
-                android:layout_marginRight="25dp"
-                android:textColor="@color/colorSecondary" />
+                android:textColor="@color/colorSecondary"
+                android:textSize="10pt"
+                android:textStyle="bold"/>
 
         </LinearLayout>
-
-        <!-- 貯金目標額の表示 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/monthly_total_savings_label"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="貯金目標額"
-                android:textSize="8pt"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textColor="@color/colorSecondary"/>
-
-            <TextView
-                android:id="@+id/monthly_total_savings_money"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="999,999,999,999円"
-                android:textSize="8pt"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:gravity="right"
-                android:layout_marginRight="25dp"
-                android:textColor="@color/colorSecondary" />
-
-        </LinearLayout>
-
-        <!-- 当月貯金額の表示 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/monthly_savings_label"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="当月貯金額"
-                android:textSize="8pt"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textColor="@color/colorSecondary"/>
-
-            <TextView
-                android:id="@+id/monthly_saving_money"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="999,999,999,999円"
-                android:textSize="8pt"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:gravity="right"
-                android:layout_marginRight="25dp"
-                android:textColor="@color/colorSecondary" />
-
-        </LinearLayout>
-
 
         <View
             android:id="@+id/view2"

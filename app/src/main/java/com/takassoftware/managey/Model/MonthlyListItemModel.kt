@@ -1,7 +1,7 @@
 package com.takassoftware.managey.Model
 
 // 月間情報リストのアイテム
-data class MonthliListItemModel(
+data class MonthlyListItemModel(
 
         var title:String
 
