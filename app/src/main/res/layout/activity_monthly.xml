@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MonthlyActivity">
+    tools:context=".MonthlyActivity"
+    android:background="@color/colorWhite">
 
     <!-- 月間情報Activityのレイアウト -->
     <LinearLayout
@@ -13,6 +14,7 @@
         android:orientation="vertical">
 
         <!-- 月・月前後ボタンの表示 -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="80dp"
@@ -27,6 +29,7 @@
                 android:background="@drawable/button_bg_clear"
                 android:textColor="@color/colorWhite"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:text="＜" />
 
             <TextView
@@ -34,12 +37,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_gravity="center"
                 android:gravity="center"
                 android:text="2018年10月"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:textColor="@color/colorWhite"
-                android:layout_gravity="center" />
+                android:textColor="@color/colorWhite" />
 
             <Button
                 android:id="@+id/monthly_next_month_button"
@@ -49,6 +52,7 @@
                 android:background="@drawable/button_bg_clear"
                 android:textColor="@color/colorWhite"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:text="＞" />
 
         </LinearLayout>
@@ -66,20 +70,24 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="月末金額"
-                android:textSize="16sp"
+                android:textSize="8pt"
                 android:textStyle="bold"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/colorSecondary"/>
 
             <TextView
                 android:id="@+id/monthly_total_money"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="25dp"
                 android:layout_weight="1"
-                android:gravity="left"
-                android:text="￥999,999,999"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_gravity="center" />
+                android:gravity="right"
+                android:text="999,999,999,999円"
+                android:textColor="@color/colorSecondary"
+                android:textSize="8pt"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -95,20 +103,24 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="当月残額"
-                android:textSize="16sp"
+                android:textSize="8pt"
                 android:textStyle="bold"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/colorSecondary"/>
 
             <TextView
                 android:id="@+id/monthly_remaining_money"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="left"
-                android:text="￥999,999,999"
-                android:textSize="18sp"
+                android:text="999,999,999,999円"
+                android:textSize="8pt"
                 android:textStyle="bold"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:layout_marginRight="25dp"
+                android:textColor="@color/colorSecondary" />
 
         </LinearLayout>
 
@@ -124,20 +136,24 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="貯金目標額"
-                android:textSize="16sp"
+                android:textSize="8pt"
                 android:textStyle="bold"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/colorSecondary"/>
 
             <TextView
                 android:id="@+id/monthly_total_savings_money"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="left"
-                android:text="￥999,999,999"
-                android:textSize="18sp"
+                android:text="999,999,999,999円"
+                android:textSize="8pt"
                 android:textStyle="bold"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:layout_marginRight="25dp"
+                android:textColor="@color/colorSecondary" />
 
         </LinearLayout>
 
@@ -153,23 +169,33 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="当月貯金額"
-                android:textSize="16sp"
+                android:textSize="8pt"
                 android:textStyle="bold"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/colorSecondary"/>
 
             <TextView
                 android:id="@+id/monthly_saving_money"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="left"
-                android:text="￥999,999,999"
-                android:textSize="18sp"
+                android:text="999,999,999,999円"
+                android:textSize="8pt"
                 android:textStyle="bold"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:layout_marginRight="25dp"
+                android:textColor="@color/colorSecondary" />
 
         </LinearLayout>
 
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/colorOrange"/>
 
         <!-- 月間情報リスト -->
         <android.support.v7.widget.RecyclerView
