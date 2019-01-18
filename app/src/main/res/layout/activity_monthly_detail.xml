@@ -6,4 +6,332 @@
     android:layout_height="match_parent"
     tools:context=".MonthlyDetailActivity">
 
+    <!-- 月間情報明細Activityのレイアウト -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- 当月残額の表示 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:background="@color/colorSecondary">
+
+                <TextView
+                    android:id="@+id/monthly_detail_monthly1_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start"
+                    android:text="月間基本情報"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="8pt"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/monthly_detail_remaining_label"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start"
+                    android:text="当月残額"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="8pt" />
+
+                <TextView
+                    android:id="@+id/monthly_detail_remaining_money"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:gravity="end"
+                    android:text="999,999,999,999円"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="8pt"/>
+
+            </LinearLayout>
+
+            <!-- 月末金額の表示 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/monthly_detail_summary_money_label"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start"
+                    android:text="月末金額"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="8pt"
+                     />
+
+                <TextView
+                    android:id="@+id/monthly_detail_summary_money"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:gravity="end"
+                    android:text="999,999,999,999円"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="8pt"
+                     />
+
+            </LinearLayout>
+
+            <!-- 貯金額目標の表示 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/monthly_detail_total_amount_label"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start"
+                    android:text="貯金額目標"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="8pt"
+                     />
+
+                <TextView
+                    android:id="@+id/monthly_detail_total_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:gravity="end"
+                    android:text="999,999,999,999円"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="8pt"
+                     />
+
+            </LinearLayout>
+
+            <!-- 当月貯金額 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:background="@color/colorSecondary">
+
+                <TextView
+                    android:id="@+id/monthly_detail_monthly1_amount_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start"
+                    android:text="当月貯金額"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="8pt"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+            
+            <!-- 当月貯金額の表示 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:onClick="onClickMonthlyAmount">
+
+                <TextView
+                    android:id="@+id/monthly_detail_monthly_amount_label"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start"
+                    android:text="貯金"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="8pt"
+                     />
+
+                <TextView
+                    android:id="@+id/monthly_detail_monthly_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:gravity="end"
+                    android:text="999,999,999,999円"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="8pt"
+                     />
+
+            </LinearLayout>
+
+            <!-- カード使用表示 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:background="@color/colorSecondary">
+
+                <TextView
+                    android:id="@+id/monthly_detail_card_used_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start"
+                    android:text="クレジットカード使用"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="8pt"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- カード使用の表示 -->
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/monthly_detail_card_used_list"/>
+
+            <!-- 収入の表示 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:background="@color/colorSecondary">
+
+                <TextView
+                    android:id="@+id/monthly_detail_income_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start"
+                    android:text="収入"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="8pt"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- 収入１の表示 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/monthly_detail_income1_label"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start"
+                    android:text="収入１"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="8pt"
+                     />
+
+                <TextView
+                    android:id="@+id/monthly_detail_income1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:gravity="end"
+                    android:text="999,999,999,999円"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="8pt"
+                     />
+
+            </LinearLayout>
+
+            <!-- 収入２の表示 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/monthly_detail_income2_label"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start"
+                    android:text="収入２"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="8pt"
+                     />
+
+                <TextView
+                    android:id="@+id/monthly_detail_income2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:gravity="end"
+                    android:text="999,999,999,999円"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="8pt"
+                     />
+
+            </LinearLayout>
+
+            <!-- 収入３の表示 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/monthly_detail_income3_label"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start"
+                    android:text="収入３"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="8pt"
+                     />
+
+                <TextView
+                    android:id="@+id/monthly_detail_income3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:gravity="end"
+                    android:text="999,999,999,999円"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="8pt"
+                     />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
 </android.support.constraint.ConstraintLayout>

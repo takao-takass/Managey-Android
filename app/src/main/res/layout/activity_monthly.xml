@@ -73,7 +73,7 @@
                 android:gravity="start"
                 android:text="当月残額"
                 android:textColor="@color/colorSecondary"
-                android:textSize="10pt"
+                android:textSize="8pt"
                 android:textStyle="bold" />
 
             <TextView
@@ -85,7 +85,7 @@
                 android:gravity="end"
                 android:text="999,999,999,999円"
                 android:textColor="@color/colorSecondary"
-                android:textSize="10pt"
+                android:textSize="8pt"
                 android:textStyle="bold"/>
 
         </LinearLayout>
