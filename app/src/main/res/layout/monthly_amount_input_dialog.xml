@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
+    android:layout_marginVertical="@dimen/dialog_margin_Y"
+    android:layout_marginHorizontal="@dimen/dialog_margin_X"
     android:id="@+id/monthly_amount_input_dialog" >
 
-    <TextView
-        android:id="@+id/monthly_amount_input_dialog_amount_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="貯金額："/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/monthly_amount_input_dialog_amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="number" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/monthly_amount_input_dialog_amount_label"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="@dimen/font_size_normal"
+            android:textColor="@color/colorSecondary"
+            android:text="金額（千円）" />
+
+        <EditText
+            android:id="@+id/monthly_amount_input_dialog_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/monthly_amount_input_dialog_amount_yen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:textSize="@dimen/font_size_normal"
+            android:textColor="@color/colorSecondary"
+            android:text="000円" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

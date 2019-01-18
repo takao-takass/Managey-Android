@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="@dimen/list_item_row_height"
     android:id="@+id/monthly_detail_card_used_list_item">
 
     <LinearLayout
@@ -18,19 +18,32 @@
             android:gravity="start"
             android:text="カード１"
             android:textColor="@color/colorSecondary"
-            android:textSize="8pt"
+            android:textSize="@dimen/font_size_normal"
             />
 
         <TextView
             android:id="@+id/monthly_detail_card_used"
-            android:layout_width="match_parent"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="10dp"
             android:gravity="end"
-            android:text="999,999,999,999円"
+            android:text="999,999,999,999"
             android:textColor="@color/colorSecondary"
-            android:textSize="8pt"
+            android:textSize="@dimen/font_size_normal"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/monthly_detail_card_used_yen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:gravity="end"
+            android:text="円"
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/font_size_normal"
             />
 
     </LinearLayout>

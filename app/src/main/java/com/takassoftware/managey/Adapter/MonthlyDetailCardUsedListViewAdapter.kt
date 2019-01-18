@@ -8,6 +8,7 @@ import com.takassoftware.managey.Model.MonthlyDetailCardUsedListItemModel
 import com.takassoftware.managey.R
 import android.support.constraint.ConstraintLayout
 import android.widget.TextView
+import com.takassoftware.managey.CommonProcess.ValueProcessing
 
 // 月間情報明細のカード使用リストのAdapter
 public class MonthlyDetailCardUsedListViewAdapter : RecyclerView.Adapter<MonthlyDetailCardUsedListViewHolder> {
@@ -24,15 +25,16 @@ public class MonthlyDetailCardUsedListViewAdapter : RecyclerView.Adapter<Monthly
         return MonthlyDetailCardUsedListViewHolder(inflate)
     }
 
+    // レイアウトへの値の設定
     override fun onBindViewHolder(holder: MonthlyDetailCardUsedListViewHolder, position: Int) {
         holder.cardName.text = list[position].cardName
-        holder.cardUsed.text = Integer.toString(list[position].cardUsed)
+        holder.cardUsed.text = ValueProcessing().separateValuesComma(list[position].cardUsed)
         holder.monthlyDetailCardUsedListItem.id = position
 
     }
 
     override fun getItemCount(): Int {
-        return list.count() //list.size()
+        return list.count()
     }
 
 }

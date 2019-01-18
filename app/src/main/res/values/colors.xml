@@ -19,6 +19,7 @@
     <color name="colorInfo">#17A2B8</color>
     <color name="colorLight">#F8F9FA</color>
     <color name="colorGray">#33000000</color>
+    <color name="colorLightBlue">#7BCFF7</color>
 
     <color name="clearButtonPressed">#33000000</color>
 

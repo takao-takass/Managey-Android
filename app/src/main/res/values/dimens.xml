@@ -1,3 +1,13 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="font_size_little">6pt</dimen>
+    <dimen name="font_size_normal">8pt</dimen>
+    <dimen name="font_size_big">10pt</dimen>
+
+    <dimen name="list_title_row_height">40dp</dimen>
+    <dimen name="list_item_row_height">50dp</dimen>
+
+    <dimen name="dialog_margin_X">20dp</dimen>
+    <dimen name="dialog_margin_Y">15dp</dimen>
 </resources>
