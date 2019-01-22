@@ -4,8 +4,17 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.takassoftware.managey.Constant.IntentExtraConst
 
+/**
+ * 入出金Activity
+ *
+ * @author たかお
+ * @since 2019.01.22
+ */
 class InoutActivity : AppCompatActivity() {
 
+    /**
+     * onCreate
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inout)

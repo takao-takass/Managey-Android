@@ -7,41 +7,55 @@ import android.content.Intent
 import android.view.View
 import android.widget.Toast
 
+/**
+ * メインActivity(タイトル)
+ *
+ * @author たかお
+ * @since 2019.01.22
+ */
 class MainActivity : AppCompatActivity() {
 
+    /**
+     * onClick
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
     }
 
-    // ボタンをクリックした時のイベントです
+    /**
+     * ボタンのonClickイベント
+     */
     fun onClick(v: View) {
 
         // リソースIDに応じて処理を確定させます
         val func = when (v.id) {
 
             // ログインボタンのイベント
-            R.id.main_login_button -> fun(v:View){
-                authorizationUser(v)
+            R.id.main_login_button -> fun(){
+                authorizationUser()
             }
 
             // 新規登録ボタンのイベント
-            R.id.main_entry_button -> fun(v:View){
-                transEntryActivity(v)
+            R.id.main_entry_button -> fun(){
+                transEntryActivity()
             }
 
             // 定義していないボタンのイベント
-            else -> fun(v:View){}
+            else -> fun(){}
         }
 
         // イベント処理を実行します
-        func(v)
+        func()
 
     }
 
-    // ログイン認証を行います
-    fun authorizationUser(v: View){
+    //
+    /**
+     * ログイン認証を行います
+     */
+    fun authorizationUser(){
 
         // 画面からメールアドレスとパスワードを取得し、認証用文字列を生成します。
         // 作成した文字列を認証APIに送り、認証結果を受け取ります。
@@ -61,15 +75,17 @@ class MainActivity : AppCompatActivity() {
         // 認証結果OKの場合は、アクセストークンをセットして次の画面に遷移します。
         // 認証結果NGの場合は、メッセージを表示して画面に留まります。
         if (authorizedResult){
-            transMonthlyActivity(v)
+            transMonthlyActivity()
         }else{
             Toast.makeText(applicationContext, "ログインできません", Toast.LENGTH_LONG).show()
         }
 
     }
 
-    // 月間情報画面に遷移します
-    fun transMonthlyActivity(v:View){
+    /**
+     * 月間情報画面に遷移します
+     */
+    fun transMonthlyActivity(){
 
         // MonthlyActivityのインテントを作成、発行します。
         val intent = Intent(this, MonthlyActivity::class.java)
@@ -77,8 +93,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    // 新規登録画面に遷移します
-    fun transEntryActivity(v: View) {
+    /**
+     * 新規登録画面に遷移します
+     */
+    fun transEntryActivity() {
 
         // EntryActivityのインテントを作成、発行します。
         val intent = Intent(this, EntryActivity::class.java)

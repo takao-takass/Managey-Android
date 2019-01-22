@@ -11,9 +11,17 @@ import com.takassoftware.managey.Adapter.MonthlyListViewAdapter
 import com.takassoftware.managey.Constant.IntentExtraConst
 import com.takassoftware.managey.Model.MonthlyListItemModel
 
+/**
+ * 月間情報Activity
+ *
+ * @author たかお
+ * @since 2019.01.22
+ */
 class MonthlyActivity : AppCompatActivity() {
 
-
+    /**
+     * onCreate
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_monthly)
@@ -31,7 +39,9 @@ class MonthlyActivity : AppCompatActivity() {
 
     }
 
-    // 月間情報リストのタップイベント
+    /**
+     * 月間情報リストのonClickイベント
+     */
     fun onClickMonthlyListItem(v: View) {
 
         // 週間情報Activityに遷移する
@@ -39,15 +49,21 @@ class MonthlyActivity : AppCompatActivity() {
 
     }
 
-    // 当月残高のタップイベント
+    /**
+     * 当月残額のonClickイベント
+     */
     fun onClickMonthlyRemaining(v: View){
 
         // 月間情報明細Activityに遷移する
-        transMonthlyDetailActivity(v)
+        transMonthlyDetailActivity()
 
     }
 
-    // 仮実装：月間情報リストに表示するデータセットの作成
+    /**
+     * 仮実装：月間情報リストに表示するデータセットの作成
+     *
+     * @return データセット
+     */
     private fun createDataset(): List<MonthlyListItemModel> {
         val dataset = mutableListOf<MonthlyListItemModel>()
         for (i in 1..31) {
@@ -57,8 +73,10 @@ class MonthlyActivity : AppCompatActivity() {
         return dataset
     }
 
-    // 月間情報明細Activityに遷移する
-    fun transMonthlyDetailActivity(v: View) {
+    /**
+     * 月間情報明細Activityに遷移する
+     */
+    fun transMonthlyDetailActivity() {
 
         // 月間情報明細Activityのインテントを作成し、発行する。
         val intent =
@@ -69,7 +87,11 @@ class MonthlyActivity : AppCompatActivity() {
 
     }
 
-    // 入出金Activityに遷移する
+    /**
+     * 入出金Activityに遷移する
+     *
+     * @param v onClickイベントが発生したView
+     */
     fun transWeeklyActivity(v: View) {
 
         // 入出金Activityに渡す値を取り出す

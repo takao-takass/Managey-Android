@@ -26,8 +26,17 @@ import kotlinx.android.synthetic.main.monthly_amount_input_dialog.view.*
 import kotlinx.android.synthetic.main.monthly_income_input_dialog.view.*
 import java.util.zip.Inflater
 
+/**
+ * 月間情報明細Activity
+ *
+ * @author たかお
+ * @since 2019.01.22
+ */
 class MonthlyDetailActivity : AppCompatActivity() {
 
+    /**
+     * onCreate
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_monthly_detail)
@@ -50,7 +59,9 @@ class MonthlyDetailActivity : AppCompatActivity() {
 
     }
 
-    // 当月貯金額をタップ
+    /**
+     * 当月貯金額のonClickイベント
+     */
     fun onClickMonthlyAmount(v: View) {
 
         // 貯金額の取得
@@ -60,7 +71,7 @@ class MonthlyDetailActivity : AppCompatActivity() {
         val dialogView = findViewById<ConstraintLayout>(R.id.monthly_amount_input_dialog)
         val inflate = LayoutInflater.from(this).inflate(R.layout.monthly_amount_input_dialog,dialogView)
         val amountLong =
-                StringProcessing().removeComma(amountLabel.text.toString())/1000L
+                StringProcessing().removeCommaToLong(amountLabel.text.toString())/1000L
         inflate.monthly_amount_input_dialog_amount.setText(amountLong.toString())
 
         // 貯金額変更ダイアログの表示
@@ -70,14 +81,18 @@ class MonthlyDetailActivity : AppCompatActivity() {
                 .setNegativeButton("キャンセル", null)
                 .setPositiveButton("OK", DialogInterface.OnClickListener { _, _ ->
                     // OKボタン押したときの処理
-                    val amount = inflate.monthly_amount_input_dialog_amount.text.toString().toLong()
+                    // 貯金額の取得と設定
+                    val inputAmountText = inflate.monthly_amount_input_dialog_amount.text.toString()
+                    val amount = StringProcessing().emptyToZero(inputAmountText).toLong()
                     amountLabel.text = ValueProcessing().separateValuesComma(amount*1000L)
                 })
                 .show()
 
     }
 
-    // 収入１～３をタップ
+    /**
+     * 収入１～収入３のonClickイベント
+     */
     fun onClickIncome(v: View) {
 
         // タップした項目のタグで収入１～３を分岐する
@@ -99,8 +114,9 @@ class MonthlyDetailActivity : AppCompatActivity() {
         val inflate = LayoutInflater.from(this).inflate(R.layout.monthly_income_input_dialog,dialogView)
         inflate.monthly_income_input_dialog_name.setText(incomeNameLabel.text.toString())
         val amountText =
-                StringProcessing().removeComma(incomeAmountLabel.text.toString())/1000L
+                StringProcessing().removeCommaToLong(incomeAmountLabel.text.toString())/1000L
         inflate.monthly_income_input_dialog_amount.setText(amountText.toString())
+
         // 貯金額変更ダイアログの表示
         AlertDialog.Builder(this)
                 .setTitle("収入の変更")
@@ -112,14 +128,19 @@ class MonthlyDetailActivity : AppCompatActivity() {
                     incomeNameLabel.text = inflate.monthly_income_input_dialog_name.text.toString()
 
                     // 収入額の取得と設定
-                    val amount = inflate.monthly_income_input_dialog_amount.text.toString().toLong()
+                    val inputAmountText = inflate.monthly_income_input_dialog_amount.text.toString()
+                    val amount = StringProcessing().emptyToZero(inputAmountText).toLong()
                     incomeAmountLabel.text = ValueProcessing().separateValuesComma(amount*1000L)
                 })
                 .show()
+
     }
 
 
-    // 仮実装：月間情報リストに表示するデータセットの作成
+    /**
+     * 【仮実装】月間情報リストに表示するデータセットの作成
+     * @return データセット
+     */
     private fun createDataset(): List<MonthlyDetailCardUsedListItemModel> {
         val dataset = mutableListOf<MonthlyDetailCardUsedListItemModel>()
         for (i in 1..4) {
