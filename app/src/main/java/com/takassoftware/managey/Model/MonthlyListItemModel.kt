@@ -1,8 +1,14 @@
 package com.takassoftware.managey.Model
 
-// 月間情報リストのアイテム
+/**
+ * 月間情報リストの項目のモデル
+ *
+ * @author たかお
+ * @since 2019.01.220
+ */
 data class MonthlyListItemModel(
 
-        var title:String
+    /** タイトル */
+    var title:String
 
 )
