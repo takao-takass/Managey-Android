@@ -100,8 +100,8 @@ class MonthlyActivity : AppCompatActivity() {
         // 入出金Activityのインテントを作成し、発行する。
         val intent =
                 Intent(this, InoutActivity::class.java)
-                        .putExtra(IntentExtraConst.INOUT_NAME,title)
-                        .putExtra(IntentExtraConst.INOUT_ID,"000000000001")
+                        .putExtra(IntentExtraConst.MONTHLY_EVENT_NAME,title)
+                        .putExtra(IntentExtraConst.MONTHLY_EVENT_ID,"000000000001")
         startActivity(intent)
 
     }

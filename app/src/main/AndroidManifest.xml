@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme_OnTitle">
-
+        <activity android:name=".InoutDetailActivity"></activity>
         <!-- android:theme="@style/Theme.AppCompat.Light.NoActionBar" -->
         <activity
             android:name=".MainActivity"
@@ -29,7 +29,7 @@
         <activity
             android:name=".MonthlyDetailActivity"
             android:theme="@style/AppTheme_OnTitle" />
-        <activity android:name=".InoutActivity"></activity>
+        <activity android:name=".InoutActivity" />
     </application>
 
 </manifest>

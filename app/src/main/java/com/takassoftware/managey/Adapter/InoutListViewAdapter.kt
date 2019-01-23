@@ -19,7 +19,7 @@ import com.takassoftware.managey.Model.InoutListItemModel
 public class InoutListViewAdapter : RecyclerView.Adapter<InoutListViewHolder> {
 
     /** 入出金リストの表示データ */
-    private var inoutDataList:List<InoutListItemModel>
+    public var inoutDataList:List<InoutListItemModel>
 
     /**
      * コンストラクタ
@@ -41,11 +41,16 @@ public class InoutListViewAdapter : RecyclerView.Adapter<InoutListViewHolder> {
      */
     override fun onBindViewHolder(holder: InoutListViewHolder, position: Int) {
 
+        // 表示項目の設定
         holder.inoutListItem.id = position
+        holder.id.text = inoutDataList[position].id
         holder.title.text = inoutDataList[position].title
         holder.span.text = inoutDataList[position].spanStart + "～" + inoutDataList[position].spanEnd
         holder.cashAmount.text = ValueProcessing().separateValuesComma(inoutDataList[position].cashAmount)
         holder.creditAmount.text = ValueProcessing().separateValuesComma(inoutDataList[position].creditAmount)
+
+        // リストの項目に対するイベントリスナの設定
+        holder.inoutListItem.setOnLongClickListener(inoutDataList[position].onLongClick)
 
     }
 
@@ -69,6 +74,9 @@ class InoutListViewHolder : RecyclerView.ViewHolder {
     /** 入出金リストの項目*/
     public var inoutListItem : ConstraintLayout
 
+    /** 入出金ID */
+    public var id : TextView
+
     /** 項目のタイトル*/
     public var title : TextView
 
@@ -86,6 +94,7 @@ class InoutListViewHolder : RecyclerView.ViewHolder {
      */
     constructor(itemView:View):super(itemView){
         inoutListItem = itemView.findViewById<ConstraintLayout>(R.id.inout_list_item)
+        id = itemView.findViewById<TextView>(R.id.inout_list_item_id)
         title = itemView.findViewById<TextView>(R.id.inout_list_item_title)
         span = itemView.findViewById<TextView>(R.id.inout_list_item_span)
         cashAmount = itemView.findViewById<TextView>(R.id.inout_list_item_cash_amount)

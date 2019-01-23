@@ -1,5 +1,7 @@
 package com.takassoftware.managey.Model
 
+import android.view.View
+
 /**
  * 入出金リストの項目のモデル
  *
@@ -7,6 +9,9 @@ package com.takassoftware.managey.Model
  * @since 2019.01.22
  */
 data class InoutListItemModel(
+
+    /** 入出金ID */
+    var id : String,
 
     /** タイトル */
     var title : String,
@@ -21,6 +26,9 @@ data class InoutListItemModel(
     var cashAmount : Long,
 
     /** クレジットカード金額 */
-    var creditAmount : Long
+    var creditAmount : Long,
+
+    /** ロングタップイベントの処理 */
+    var onLongClick : (v: View?)->Boolean
 
 )

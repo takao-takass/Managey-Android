@@ -1,13 +1,19 @@
 package com.takassoftware.managey
 
+import android.content.DialogInterface
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.constraint.ConstraintLayout
+import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.TextView
 import com.takassoftware.managey.Adapter.InoutListViewAdapter
 import com.takassoftware.managey.Constant.IntentExtraConst
 import com.takassoftware.managey.Model.InoutListItemModel
-import com.takassoftware.managey.Model.MonthlyListItemModel
 
 /**
  * 入出金Activity
@@ -17,6 +23,8 @@ import com.takassoftware.managey.Model.MonthlyListItemModel
  */
 class InoutActivity : AppCompatActivity() {
 
+    private var inoutDataList = mutableListOf<InoutListItemModel>()
+
     /**
      * onCreate
      */
@@ -25,8 +33,8 @@ class InoutActivity : AppCompatActivity() {
         setContentView(R.layout.activity_inout)
 
         // インテントから入出金IDを取得する
-        val inoutId = intent.getStringExtra(IntentExtraConst.INOUT_ID)
-        val inoutName = intent.getStringExtra(IntentExtraConst.INOUT_NAME)
+        val inoutId = intent.getStringExtra(IntentExtraConst.MONTHLY_EVENT_ID)
+        val inoutName = intent.getStringExtra(IntentExtraConst.MONTHLY_EVENT_NAME)
 
         // アクションバーのタイトル表示を変更
         this.title = "入出金一覧（ $inoutName ）"
@@ -47,18 +55,70 @@ class InoutActivity : AppCompatActivity() {
      * @return データセット
      */
     private fun createDataset(): List<InoutListItemModel> {
-        val dataset = mutableListOf<InoutListItemModel>()
+        inoutDataList = mutableListOf<InoutListItemModel>()
         for (i in 1..8) {
             val data = InoutListItemModel(
-                    when(i%3){ 0-> "旅行（宿泊費＋交通費）" 1-> "平日食費等" else -> "休日娯楽費" } ,
+                    "00000"+i,
+                    when(i%3){0-> "旅行（宿泊費＋交通費）" 1-> "平日食費等" else -> "休日娯楽費" } ,
                     "10/"+i,
                     "10/"+i,
                     i*(-23000L),
-                    i*-(17000L)
+                    i*-(17000L),
+                    onLongClickInoutListItem
+
             )
-            dataset.add(data)
+            inoutDataList.add(data)
         }
-        return dataset
+        return inoutDataList
+    }
+
+    /**
+     * 入出金リストのonClickイベント
+     *
+     * @param v onClickが発生したView
+     */
+    fun onClickInoutListItem(v:View){
+
+        // 入出金明細Activityのインテントを作成し、発行する。
+        val intent =
+                Intent(this, InoutDetailActivity::class.java)
+                        .putExtra(IntentExtraConst.INOUT_ID,"000000000001")
+        startActivity(intent)
+    }
+
+
+    /**
+     * 入出金リストの項目のonLongClickイベント
+     * Listenerの設定はAdapterクラスで実装
+     *
+     * @param v onLongClickが発生したView
+     */
+    val onLongClickInoutListItem : (v: View?)->Boolean = {
+
+        // 貯金額変更ダイアログのレイアウトを作成
+        val dialogView = findViewById<ConstraintLayout>(R.id.inout_remove_dialog)
+        val inflate = LayoutInflater.from(this).inflate(R.layout.inout_remove_dialog,dialogView)
+
+        // 貯金額変更ダイアログの表示
+        AlertDialog.Builder(this)
+               .setTitle("入出金の削除")
+                .setView(inflate)
+                .setNegativeButton("キャンセル", null)
+                .setPositiveButton("削除", DialogInterface.OnClickListener { _, _ ->
+                    // OKボタン押したときの処理
+
+                    // ロングタップされた項目の入出金IDを取得
+                    // 入出金IDからリストの位置を取得する
+                    val cleckedInoutId = it?.findViewById<TextView>(R.id.inout_list_item_id)?.text
+                    val itemPosition = inoutDataList.indexOfFirst  {it.id == cleckedInoutId}
+
+                    // 入出金を削除する
+                    inoutDataList.removeAt(itemPosition)
+                    findViewById<RecyclerView>(R.id.inout_list).adapter?.notifyItemRemoved(itemPosition)
+                })
+                .show()
+
+        true
     }
 
 }
