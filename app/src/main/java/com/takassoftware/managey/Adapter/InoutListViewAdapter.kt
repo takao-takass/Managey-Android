@@ -64,7 +64,7 @@ public class InoutListViewAdapter : RecyclerView.Adapter<InoutListViewHolder> {
 }
 
 /**
- * 月間情報リストのHolder
+ * 入出金リストのHolder
  *
  * @author たかお
  * @since 2019.01.22

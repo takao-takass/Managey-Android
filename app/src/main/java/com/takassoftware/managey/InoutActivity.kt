@@ -23,6 +23,7 @@ import com.takassoftware.managey.Model.InoutListItemModel
  */
 class InoutActivity : AppCompatActivity() {
 
+    /** 入出金リストのデータリスト */
     private var inoutDataList = mutableListOf<InoutListItemModel>()
 
     /**
@@ -95,11 +96,11 @@ class InoutActivity : AppCompatActivity() {
      */
     val onLongClickInoutListItem : (v: View?)->Boolean = {
 
-        // 貯金額変更ダイアログのレイアウトを作成
+        // 入出金削除ダイアログのレイアウトを作成
         val dialogView = findViewById<ConstraintLayout>(R.id.inout_remove_dialog)
         val inflate = LayoutInflater.from(this).inflate(R.layout.inout_remove_dialog,dialogView)
 
-        // 貯金額変更ダイアログの表示
+        // 入出金削除ダイアログの表示
         AlertDialog.Builder(this)
                .setTitle("入出金の削除")
                 .setView(inflate)

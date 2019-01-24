@@ -60,7 +60,7 @@
         <!-- 当月残額の表示 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="75dp"
             android:orientation="horizontal"
             android:onClick="onClickMonthlyRemaining">
 
@@ -93,8 +93,8 @@
         <View
             android:id="@+id/view2"
             android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:background="@color/colorOrange"/>
+            android:layout_height="2dp"
+            android:background="@color/colorGray"/>
 
         <!-- 月間情報リスト -->
         <android.support.v7.widget.RecyclerView
