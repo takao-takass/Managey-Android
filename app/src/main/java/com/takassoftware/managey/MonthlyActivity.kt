@@ -1,15 +1,23 @@
 package com.takassoftware.managey
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.constraint.ConstraintLayout
+import android.support.design.widget.FloatingActionButton
+import android.support.v7.app.AlertDialog
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 import com.takassoftware.managey.Adapter.MonthlyListViewAdapter
 import com.takassoftware.managey.Constant.IntentExtraConst
 import com.takassoftware.managey.Model.MonthlyListItemModel
+import android.widget.Toast
+
+
 
 /**
  * 月間情報Activity
@@ -34,6 +42,10 @@ class MonthlyActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 
+        // イベント追加FABのイベントリスナ
+        val addFab = findViewById<FloatingActionButton>(R.id.monthly_add_fab)
+        addFab.setOnClickListener(onClickAddFab)
+
         // 月間情報リストに対するadapterの設定
         recyclerView.adapter = MonthlyListViewAdapter(this.createDataset())
 
@@ -57,6 +69,39 @@ class MonthlyActivity : AppCompatActivity() {
         // 月間情報明細Activityに遷移する
         transMonthlyDetailActivity()
 
+    }
+
+    /**
+     * 設定のonClickイベント
+     */
+    fun onClickSetting(v: View){
+
+        // 設定メニューActivityに遷移する
+        transSettingMenuActivity()
+
+    }
+
+    /**
+     * 追加FABのonClickイベント
+     * @param v onClickが発生したView
+     */
+    val onClickAddFab : (v: View)->Unit = {
+
+        // イベント追加ダイアログを表示する
+        val dialogView = findViewById<ConstraintLayout>(R.id.monthly_event_add_dialog)
+        val inflate = LayoutInflater.from(this).inflate(R.layout.monthly_event_add_dialog,dialogView)
+
+        // 入出金削除ダイアログの表示
+        AlertDialog.Builder(this)
+                .setTitle("イベントの登録")
+                .setView(inflate)
+                .setNegativeButton("キャンセル", null)
+                .setPositiveButton("登録", DialogInterface.OnClickListener { _, _ ->
+                    // OKボタン押したときの処理
+                    // イベントタイトルを取得して登録する
+
+                })
+                .show()
     }
 
     /**
@@ -102,6 +147,18 @@ class MonthlyActivity : AppCompatActivity() {
                 Intent(this, InoutActivity::class.java)
                         .putExtra(IntentExtraConst.MONTHLY_EVENT_NAME,title)
                         .putExtra(IntentExtraConst.MONTHLY_EVENT_ID,"000000000001")
+        startActivity(intent)
+
+    }
+
+    /**
+     * 設定メニューActivityに遷移する
+     */
+    fun transSettingMenuActivity() {
+
+        // 設定メニューActivityのインテントを作成し、発行する。
+        val intent =
+                Intent(this, SettingMenuActivity::class.java)
         startActivity(intent)
 
     }

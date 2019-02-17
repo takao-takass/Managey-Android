@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,53 +7,70 @@
     tools:context=".MonthlyActivity"
     android:background="@color/colorWhite">
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/monthly_add_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/ic_add_black_24dp"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="normal" />
+
     <!-- 月間情報Activityのレイアウト -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <!-- 月・月前後ボタンの表示 -->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:orientation="horizontal"
-            android:background="@color/colorOrange">
+            android:background="@color/colorOrange"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/monthly_prev_month_button"
                 android:layout_width="5dp"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg_clear"
-                android:textColor="@color/colorWhite"
-                android:layout_gravity="center"
                 android:gravity="center"
-                android:text="＜" />
+                android:text="＜"
+                android:textColor="@color/colorWhite" />
 
             <TextView
                 android:id="@+id/monthly_month_text"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:text="2018年10月"
+                android:textColor="@color/colorWhite"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/colorWhite" />
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/monthly_next_month_button"
                 android:layout_width="10dp"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg_clear"
-                android:textColor="@color/colorWhite"
-                android:layout_gravity="center"
                 android:gravity="center"
-                android:text="＞" />
+                android:text="＞"
+                android:textColor="@color/colorWhite" />
+
 
         </LinearLayout>
 
@@ -61,8 +78,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:orientation="horizontal"
-            android:onClick="onClickMonthlyRemaining">
+            android:onClick="onClickMonthlyRemaining"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/monthly_remaining_label"
@@ -86,7 +103,7 @@
                 android:text="999,999,999,999円"
                 android:textColor="@color/colorSecondary"
                 android:textSize="8pt"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -94,16 +111,53 @@
             android:id="@+id/view2"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="@color/colorGray"/>
+            android:background="@color/colorGray" />
 
         <!-- 月間情報リスト -->
         <android.support.v7.widget.RecyclerView
             android:id="@+id/monthly_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <!-- 当月残額の表示 -->
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorGray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="onClickSetting"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                app:srcCompat="@drawable/ic_settings_black_24dp" />
+
+            <TextView
+                android:id="@+id/monthly_user_name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
+                android:text="たかお@Managey"
+                android:textColor="@color/colorSecondary"
+                android:textSize="8pt"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
 
     </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>
