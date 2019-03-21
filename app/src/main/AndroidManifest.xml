@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme_OnTitle">
-        <activity android:name=".SettingMenuActivity"></activity>
-        <!-- android:theme="@style/Theme.AppCompat.Light.NoActionBar" -->
+        <activity android:name=".InoutEntryActivity"></activity>
+        <activity android:name=".SettingMenuActivity" /> <!-- android:theme="@style/Theme.AppCompat.Light.NoActionBar" -->
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme_NoneTitle">

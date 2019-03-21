@@ -5,6 +5,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
+import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -39,6 +40,10 @@ class InoutActivity : AppCompatActivity() {
 
         // アクションバーのタイトル表示を変更
         this.title = "入出金一覧（ $inoutName ）"
+
+        // イベント追加FABのイベントリスナ
+        val addFab = findViewById<FloatingActionButton>(R.id.inout_add_fab)
+        addFab.setOnClickListener(onClickAddFab)
 
         // 入出金リストのレイアウト設定
         val inoutListView = findViewById(R.id.inout_list) as RecyclerView
@@ -120,6 +125,18 @@ class InoutActivity : AppCompatActivity() {
                 .show()
 
         true
+    }
+
+    /**
+     * 追加FABのonClickイベント
+     * @param v onClickが発生したView
+     */
+    val onClickAddFab : (v: View)->Unit = {
+
+        // 入出金登録Activityのインテントを作成し、発行する。
+        val intent =
+                Intent(this, InoutEntryActivity::class.java)
+        startActivity(intent)
     }
 
 }
